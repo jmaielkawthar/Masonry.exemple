@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <style>
 .wrapper {
   display: grid;
@@ -22,35 +23,142 @@
 .wrapper div:nth-child(4n+4) {
  grid-column: 4/ 5;
 }
-
+.red{
+  background-color:red;
+}
+.blue{
+  background-color:blue;
+}
 </style>
 </head>
 <body>
+  <h1>Isotope - filtering</h1>
+  <div class="button-group filters-button-group">
+    <button class="button is-checked" data-filter="*">show all</button>
+    <button class="button" data-filter=".metal">metal</button>
+    <button class="button" data-filter=".transition">transition</button>
+    <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
+    <button class="button" data-filter=":not(.transition)">not transition</button>
+    <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
+  </div>
 <div class="wrapper">
-   <div  class="one" style="    background-color:red;">One</div>
-   <div class="two"  style="    background-color:blue;">Two</div>
-   <div class="three"  style="    background-color:red;">Three</div>
-   <div class="four"  style="    background-color:blue;">Four</div>
-   <div class="five"  style="    background-color:red;">Five</div>
-   <div class="six"  style="    background-color:blue;">Six</div>
-   <div class="seven"  style="    background-color:red;">Seven</div>
-   <div class="Eight"  style="    background-color:blue;">Eight</div>
-   <div class="nine"  style="    background-color:red;">nine</div>
-   <div class="ten"  style="    background-color:blue;">ten</div>
-   <div class="eleven"  style="    background-color:red;">eleven</div>
-   <div class="twelve"  style="    background-color:blue;">twelve</div>
-   <div class="nine"  style="    background-color:red;">13</div>
-   <div class="ten"  style="    background-color:blue;">14</div>
-   <div class="eleven"  style="    background-color:red;">15</div>
-   <div class="twelve"  style="    background-color:blue;">16</div>
-   <div class="nine"  style="    background-color:red;">17</div>
-   <div class="ten"  style="    background-color:blue;">18</div>
-   <div class="eleven"  style="    background-color:red;">19</div>
-   <div class="twelve"  style="    background-color:blue;">20</div>
+   <div  class="red element-item  transition metal" >One</div>
+   <div class="blue element-item metalloid " >Two</div>
+   <div class="red element-item post-transition metal " data-category="post-transition"  >Three</div>
+   <div class="blue element-item post-transition metal " data-category="post-transition"  >Four</div>
+   <div class="red element-item"  >Five</div>
+   <div class="blue element-item post-transition metal " data-category="post-transition" >Six</div>
+   <div class="red element-item post-transition metal " data-category="post-transition"  >Seven</div>
+   <div class="blue element-item">Eight</div>
+   <div class="red element-item"  >nine</div>
+   <div class="blue element-item"  >ten</div>
+   <div class="red element-item"  >eleven</div>
+   <div class="blue element-item" >twelve</div>
+   <div class="red element-item"  >13</div>
+   <div class="blue element-item"  >14</div>
+   <div class="red element-item"   >15</div>
+   <div class="blue element-item"  >16</div>
+   <div class="red element-item" >17</div>
+   <div class="blue element-item"    >18</div>
+   <div class="red element-item"  >19</div>
+   <div class="blue element-item"  >20</div>
 
+</div>
+<div class="grid">
+  <div class="element-item transition metal " >
+    <h3 class="name">Mercury</h3>
+
+  </div>
+  <div class="element-item metalloid " >
+    <h3 class="name">Tellurium</h3>
+   
+  </div>
+  <div class="element-item post-transition metal " data-category="post-transition">
+    <h3 class="name">Bismuth</h3>
+
+  </div>
+  <div class="element-item post-transition metal " data-category="post-transition">
+    <h3 class="name">Lead</h3>
+
+  </div>
+  <div class="element-item transition metal " data-category="transition">
+    <h3 class="name">Gold</h3>
+
+  </div>
+  <div class="element-item alkali metal " data-category="alkali">
+    <h3 class="name">Potassium</h3>
+
+  </div>
+  <div class="element-item alkali metal " data-category="alkali">
+    <h3 class="name">Sodium</h3>
+
+  </div>
+  <div class="element-item transition metal " data-category="transition">
+    <h3 class="name">Cadmium</h3>
+    
+  </div>
+  <div class="element-item alkaline-earth metal " data-category="alkaline-earth">
+    <h3 class="name">Calcium</h3>
+
+  </div>
+  <div class="element-item transition metal " data-category="transition">
+    <h3 class="name">Rhenium</h3>
+    <p class="symbol">Re</p>
+
+  </div>
+  <div class="element-item post-transition metal " data-category="post-transition">
+    <h3 class="name">Thallium</h3>
+    <p class="symbol">Tl</p>
+    <p class="number">81</p>
+    <p class="weight">204.383</p>
+  </div>
+  <div class="element-item metalloid " data-category="metalloid">
+    <h3 class="name">Antimony</h3>
+    <p class="symbol">Sb</p>
+    <p class="number">51</p>
+    <p class="weight">121.76</p>
+  </div>
+  <div class="element-item transition metal " data-category="transition">
+    <h3 class="name">Cobalt</h3>
+    <p class="symbol">Co</p>
+    <p class="number">27</p>
+    <p class="weight">58.933</p>
+  </div>
+  <div class="element-item lanthanoid metal inner-transition " data-category="lanthanoid">
+    <h3 class="name">Ytterbium</h3>
+    <p class="symbol">Yb</p>
+    <p class="number">70</p>
+    <p class="weight">173.054</p>
+  </div>
+  <div class="element-item noble-gas nonmetal " data-category="noble-gas">
+    <h3 class="name">Argon</h3>
+    <p class="symbol">Ar</p>
+    <p class="number">18</p>
+    <p class="weight">39.948</p>
+  </div>
+  <div class="element-item diatomic nonmetal " data-category="diatomic">
+    <h3 class="name">Nitrogen</h3>
+    <p class="symbol">N</p>
+    <p class="number">7</p>
+    <p class="weight">14.007</p>
+  </div>
+  <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+    <h3 class="name">Uranium</h3>
+    <p class="symbol">U</p>
+    <p class="number">92</p>
+    <p class="weight">238.029</p>
+  </div>
+  <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+    <h3 class="name">Plutonium</h3>
+    <p class="symbol">Pu</p>
+    <p class="number">94</p>
+    <p class="weight">(244)</p>
+  </div>
 </div>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 <script>
     var wrapper=document.querySelector('.wrapper');
 var items = wrapper.children;
@@ -77,4 +185,19 @@ items[j].style.gridRow = rowPair;
 }
 }
 </script>
+<script>
+	var $grid = $(".wrapper").isotope({
+    itemSelector: ".element-item",
+    layoutMode: "fitRows"
+  });
+  // filter functions
+  var filterFns = {};
+  // bind filter button click
+  $(".filters-button-group").on("click", "button", function() {
+    var filterValue = $(this).attr("data-filter");
+    $grid.isotope({ filter: filterValue });
+  });
+</script>
+
+
 </html>
