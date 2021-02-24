@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 40px;
+  grid-auto-flow: dense;
+}
+
+
+.wrapper div:nth-child(4n+1) {
+ grid-column: 1/ 2;
+}
+.wrapper div:nth-child(4n+2) {
+ grid-column: 2/ 3;
+}
+.wrapper div:nth-child(4n+3) {
+ grid-column: 3/4;
+}
+.wrapper div:nth-child(4n+4) {
+ grid-column: 4/ 5;
+}
+
+</style>
+</head>
+<body>
+<div class="wrapper">
+   <div  class="one" style="    background-color:red;">One</div>
+   <div class="two"  style="    background-color:blue;">Two</div>
+   <div class="three"  style="    background-color:red;">Three</div>
+   <div class="four"  style="    background-color:blue;">Four</div>
+   <div class="five"  style="    background-color:red;">Five</div>
+   <div class="six"  style="    background-color:blue;">Six</div>
+   <div class="seven"  style="    background-color:red;">Seven</div>
+   <div class="Eight"  style="    background-color:blue;">Eight</div>
+   <div class="nine"  style="    background-color:red;">nine</div>
+   <div class="ten"  style="    background-color:blue;">ten</div>
+   <div class="eleven"  style="    background-color:red;">eleven</div>
+   <div class="twelve"  style="    background-color:blue;">twelve</div>
+   <div class="nine"  style="    background-color:red;">13</div>
+   <div class="ten"  style="    background-color:blue;">14</div>
+   <div class="eleven"  style="    background-color:red;">15</div>
+   <div class="twelve"  style="    background-color:blue;">16</div>
+   <div class="nine"  style="    background-color:red;">17</div>
+   <div class="ten"  style="    background-color:blue;">18</div>
+   <div class="eleven"  style="    background-color:red;">19</div>
+   <div class="twelve"  style="    background-color:blue;">20</div>
+
+</div>
+
+</body>
+<script>
+    var wrapper=document.querySelector('.wrapper');
+var items = wrapper.children;
+wrapper.style.gridTemplateRows="repeat("+Math.ceil(items.length/4)+", 250px 250px 250px 250px)"
+var i;
+var rowPair;
+var rowImpair;
+for(var j=0;j<items.length;j++){
+i= Math.trunc(j / 4);
+if(i == 0){
+if(j % 2){
+items[j].style.gridRow = '1/3';
+}else{
+items[j].style.gridRow = '1/2';
+}
+}else{
+if(j % 2){
+rowImpair = (2*i+1)+'/'+(2*i+3);
+items[j].style.gridRow = rowImpair;
+}else{
+rowPair = (2*i)+'/'+(2*i+2);
+items[j].style.gridRow = rowPair;
+}
+}
+}
+</script>
+</html>
