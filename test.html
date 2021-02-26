@@ -1,140 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="styleGallery.css">
+
 <style>
-.wrapper {
+  body{
+    margin: 40px;
+    max-width: 1440px;
+    min-width: 700px;
+  }
+.wrapper-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 310px);
   gap: 40px 40px;
   grid-auto-flow: dense;
 }
-
-
-.wrapper div:nth-child(4n+1) {
+.wrapper-grid div:nth-child(4n+1) {
  grid-column: 1/ 2;
 }
-.wrapper div:nth-child(4n+2) {
+.wrapper-grid div:nth-child(4n+2) {
  grid-column: 2/ 3;
 }
-.wrapper div:nth-child(4n+3) {
+.wrapper-grid div:nth-child(4n+3) {
  grid-column: 3/4;
 }
-.wrapper div:nth-child(4n+4) {
+.wrapper-grid div:nth-child(4n+4) {
  grid-column: 4/ 5;
 }
 .red{
   background-color:red;
   height: 100%;
-  width: 100%;
+width: auto;
 }
 .blue{
   background-color:blue;
   height: 100%;
-  width: 100%;
+width: auto;
 }
 .yellow{
   background-color:yellow;
   height: 100%;
-  width: 100%;
+width: auto;
 }
 .gray{
   background-color:gray;
   height: 100%;
-  width: 100%;
+width: auto;
 }
-
-.menu {
-    text-align: center;
-}
-
-.menu ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.menu ul li {
-    display: inline-block;
-    padding: 10px 30px;
-    font-size: 18px;
-    font-weight: 600;
-    background: #f61069;
-    color: #fff;
-    border-radius: 3px;
-    margin: 34px 4px;
-    margin-bottom: 60px;
-    cursor: pointer;
-}
-
-.menu ul li.control-active{
-	background: #3b4a4d;
-}
-.flex-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
 .card {
-  margin: 10px;
-  padding: 20px;
-  height: 35vh;
-  min-height: 250px;
-  width: calc(20% - 20px);
+
+height: 100%;
+width: auto;
 }
 
 </style>
 </head>
 <body>
-  <div class="menu">
-    <!-- <ul>
-      <li  class="control-active"  data-filter="*">gray</li>
-      <li data-filter=".card-red">red</li>
-      <li data-filter=".card-blue">blue</li>
-      <li data-filter=".card-yellow">yellow</li>
-    </ul> -->
-    <ul>
-      <li><a class="control-active button  filter-red" href="#">red cards</a></li>
-      <li><a class="button  filter-blue" href="#">blue cards</a></li>
-      <li><a class="button  filter-yellow" href="#">yellow cards</a></li>
-      <li><a class="button  filter-reset" href="#">reset cards</a></li>
-    </ul>
-  </div>
-
-
-<div class="wrapper grid flex-grid">
-   <div class="red card card-red  " >One</div>
-   <div class="yellow  card card-yellow " >Two</div>
-   <div class="red  card card-red "  >Three</div>
-   <div class="gray card card-yellow " >Four</div>
-   <div class="red card card-red "  >Five</div>
-   <div class="gray card card-yellow " >Six</div>
-   <div class="red card card-red " >Seven</div>
-   <div class="blue card card-blue" > Eight</div>
-   <div class="yellow card card-yellow  "  >nine</div>
-   <div class="blue card card-blue"  >ten</div>
-   <div class="gray card card-yellow "  >eleven</div>
-   <div class="gray card card-yellow " >twelve</div>
-   <div class="yellow card card-yellow "  >13</div>
-   <div class="blue card card-blue"  >14</div>
-   <div class="gray card card-yellow "  >15</div>
-   <div class="yellow card card-yellow " >16</div>
-   <div class="red card card-red " >17</div>
-   <div class="blue card card-blue" >18</div>
-   <div class="gray card card-yellow "  >19</div>
-   <div class="blue card card-blue"  >20</div>
+ 
+<div class="wrapper-grid ">
+   <div class="red card   " >One</div>
+   <div class="yellow  card " >Two</div>
+   <div class="red  card  "  >Three</div>
+   <div class="gray card  " >Four</div>
+   <div class="red card "  >Five</div>
+   <div class="gray card  " >Six</div>
+   <div class="red card " >Seven</div>
+   <div class="blue card " > Eight</div>
+   <div class="yellow card   "  >nine</div>
+   <div class="blue card "  >ten</div>
+   <div class="gray card  "  >eleven</div>
+   <div class="gray card " >twelve</div>
+   <div class="yellow card  "  >13</div>
+   <div class="blue card "  >14</div>
+   <div class="gray card  "  >15</div>
+   <div class="yellow card " >16</div>
+   <div class="red card  " >17</div>
+   <div class="blue card " >18</div>
+   <div class="gray card "  >19</div>
+   <div class="blue card "  >20</div>
 </div> 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 <script>
-function Masonry(wrapper){
-
+var wrapper=document.querySelector('.wrapper-grid');
 var items = wrapper.children;
-wrapper.style.gridTemplateRows="repeat("+Math.ceil(items.length/4)+", auto 40px auto 40px)";
-
+wrapper.style.gridTemplateRows="repeat("+Math.ceil(items.length/4)+", 250px 250px 250px 250px)"
 var i;
 var rowPair;
 var rowImpair;
@@ -156,40 +104,6 @@ items[j].style.gridRow = rowPair;
 }
 }
 }
-}
-	jQuery( document ).ready(function() {
-	var wrapper=document.querySelectorAll('.et_pb_ajax_pagination_container');
-	for(var k=0; k<wrapper.length;k++){
-		Masonry(wrapper[k]);
-	}	
-});
-
 </script>
-<script>
-var elem = document.querySelector( '.wrapper' );
-var grid = new Isotope( elem, {});
-var filterRed    = document.querySelector( '.filter-red' );
-var filterBlue   = document.querySelector( '.filter-blue' );
-var filterYellow = document.querySelector( '.filter-yellow' );
-var filterReset  = document.querySelector( '.filter-reset' );
-filterRed.addEventListener( "click", function( event ){
-  event.preventDefault();
-  grid.arrange({ filter: '.card-red' })
-}, false);
 
-filterBlue.addEventListener( "click", function( event ){
-  event.preventDefault();
-  grid.arrange({ filter: '.card-blue' })
-}, false);
-
-filterYellow.addEventListener( "click", function( event ){
-  event.preventDefault();
-  grid.arrange({ filter: '.card-yellow' })
-}, false);
-
-filterReset.addEventListener( "click", function( event ){
-  event.preventDefault();
-  grid.arrange({ filter: '*' })
-}, false);
-</script>
 </html>

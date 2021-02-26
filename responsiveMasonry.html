@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+      margin: 40px;
+      max-width: 1440px;
+      min-width: 700px;
+    }
+  .wrapper-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 310px);
+    gap: 40px 40px;
+    grid-auto-flow: dense;
+  }
+  .wrapper-grid div:nth-child(4n+1) {
+   grid-column: 1/ 2;
+  }
+  .wrapper-grid div:nth-child(4n+2) {
+   grid-column: 2/ 3;
+  }
+  .wrapper-grid div:nth-child(4n+3) {
+   grid-column: 3/4;
+  }
+  .wrapper-grid div:nth-child(4n+4) {
+   grid-column: 4/ 5;
+  }
+  .red{
+    background-color:red;
+
+  }
+  .blue{
+    background-color:blue;
+ 
+  }
+  .yellow{
+    background-color:yellow;
+  
+  }
+  .gray{
+    background-color:gray;
+
+  }
+
+  </style>
+<body>
+    <nav>
+        <ul>
+          <li><a class="button red filter-red" href="#">red cards</a></li>
+          <li><a class="button blue filter-blue" href="#">blue cards</a></li>
+          <li><a class="button yellow filter-yellow" href="#">yellow cards</a></li>
+          <li><a class="button reset filter-reset" href="#">reset cards</a></li>
+        </ul>
+    </nav>
+        <main class="wrapper-grid  grid flex-grid" style="position: relative; height: 1080px;">
+            <div class="card card-blue blue" > one </div>
+            <div class="card card-yellow yellow" >two</div>
+            <div class="card card-blue blue" >3</div>
+            <div class="card card-blue blue" >4</div>
+            <div class="card card-yellow yellow" >5</div>
+            <div class="card card-blue blue" >6</div>
+            <div class="card card-red red" >7</div>
+            <div class="card card-blue blue" >8</div>
+            <div class="card card-yellow yellow" >9</div>
+            <div class="card card-red red" >10</div>
+            <div class="card card-yellow yellow" >11</div>
+            <div class="card card-blue blue" >12</div>
+            <div class="card card-yellow yellow" >13</div>
+            <div class="card card-blue blue" >14</div>
+            <div class="card card-yellow yellow">15</div>
+            <div class="card card-yellow yellow" >16</div>
+            <div class="card card-blue blue" >17</div>
+            <div class="card card-blue blue" >18</div>
+            <div class="card card-yellow yellow">19</div>
+            <div class="card card-blue blue" >20</div>
+        </main>
+     </body>
+     <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+     <!-- <script id="rendered-js">
+        // Isotope by David de Sandro https://isotope.metafizzy.co/
+        
+        var elem = document.querySelector('.grid');
+        var grid = new Isotope(elem, {});
+        
+        var filterRed = document.querySelector('.filter-red');
+        var filterBlue = document.querySelector('.filter-blue');
+        var filterYellow = document.querySelector('.filter-yellow');
+        var filterReset = document.querySelector('.filter-reset');
+        
+        filterRed.addEventListener("click", function (event) {
+          event.preventDefault();
+          grid.arrange({ filter: '.card-red' });
+        }, false);
+        
+        filterBlue.addEventListener("click", function (event) {
+          event.preventDefault();
+          grid.arrange({ filter: '.card-blue' });
+        }, false);
+        
+        filterYellow.addEventListener("click", function (event) {
+          event.preventDefault();
+          grid.arrange({ filter: '.card-yellow' });
+        }, false);
+        
+        filterReset.addEventListener("click", function (event) {
+          event.preventDefault();
+          grid.arrange({ filter: '*' });
+        }, false);
+        //# sourceURL=pen.js
+        </script> -->
+     <script>
+        function Masonry(wrapper){
+        var items = wrapper.children;
+            var columnNumber= 0;
+            var vw=window.innerWidth;
+            if (vw>= 1280){
+                columnNumber= 4;
+                setGridData (wrapper , "23.88% 23.88% 23.88% 23.88%")
+            }else if((vw< 1280)&&(vw>=768)) {
+                columnNumber= 3;
+                setGridData (wrapper , "23.38% 23.38% 23.38%")
+            }
+            else if((vw< 768)&&(vw>=475)) {
+                
+                columnNumber= 2;
+                setGridData (wrapper , "42% 42%")
+            }
+                else   {
+                columnNumber= 1;
+                setGridData (wrapper , "100%")
+            }
+        wrapper.style.gridTemplateRows="repeat("+Math.ceil(items.length/columnNumber)+", auto 40px auto 40px)";
+                
+        var i;
+        var rowPair;
+        var rowImpair;
+        for(var j=0;j<items.length;j++){
+        i= Math.trunc(j / columnNumber);
+        if(i == 0){
+        
+        if(j % 2){
+        items[j].style.gridRow = '1/3';
+        }else{
+        items[j].style.gridRow = '1/2';
+        }
+        }else{
+                if(columnNumber % 2){
+                    if(j % 3 == 1 ){
+                            
+        rowImpair = (2*i+1)+'/'+(2*i+3);
+        items[j].style.gridRow = rowImpair;
+        
+        }else{
+                        
+        rowPair = (2*i)+'/'+(2*i+2);
+        items[j].style.gridRow = rowPair;
+        }
+                }
+            else{
+                if(j % 2){
+        rowImpair = (2*i+1)+'/'+(2*i+3);
+        items[j].style.gridRow = rowImpair;
+        }else{
+        rowPair = (2*i)+'/'+(2*i+2);
+        items[j].style.gridRow = rowPair;
+        }
+            }
+        
+        }
+        }
+        }
+            function MasonryAllResponsive(){
+                var wrapper=document.querySelectorAll('.et_pb_ajax_pagination_container');
+            for(var k=0; k<wrapper.length;k++){
+                Masonry(wrapper[k]);
+            }	
+            }
+            jQuery( document ).ready(function() {
+            MasonryAllResponsive();
+        });
+        function getGridData (grid) {
+            // calc computed style
+          const gridComputedStyle = window.getComputedStyle(grid);
+          return gridComputedStyle.getPropertyValue("grid-template-columns").split(" ").length
+          
+        }
+        function setGridData (grid , val) {
+            // calc computed style
+           grid.style.gridTemplateColumns = val;
+          
+        }
+        // window.addEventListener("DOMContentLoaded", outputGridData);
+        var lastWindowWidth;
+        window.addEventListener("resize", function(e){
+            
+            var $window = jQuery(this),
+                   windowWidth = $window.width();
+            if(((lastWindowWidth>= 1280)&&(windowWidth<1280))|| ((lastWindowWidth< 1280)&&(windowWidth>=1280))){
+                console.log("lastWindowWidth> 1280)&&(windowWidth>768");
+                    MasonryAllResponsive();
+            }
+            else if(((lastWindowWidth> 768)&&(windowWidth<=768)||(lastWindowWidth< 768)&&(windowWidth<=768))){
+                        console.log("lastWindowWidth>= 1280)&&(windowWidth<1280");
+        
+                    MasonryAllResponsive();
+            }
+            else if(((lastWindowWidth> 475)&&(windowWidth<=475)||(lastWindowWidth<=475)&&(windowWidth>475))){
+                    MasonryAllResponsive();
+            }
+            lastWindowWidth = windowWidth;
+        });
+    </script>
+</html>
