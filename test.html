@@ -78,10 +78,6 @@
 }
 
 .card {
-
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: .75rem solid white;
   margin: 10px;
   padding: 20px;
   height: 35vh;
@@ -134,9 +130,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 <script>
-    var wrapper=document.querySelector('.wrapper');
+function Masonry(wrapper){
+
 var items = wrapper.children;
-wrapper.style.gridTemplateRows="repeat("+Math.ceil(items.length/4)+", 250px 250px 250px 250px)"
+wrapper.style.gridTemplateRows="repeat("+Math.ceil(items.length/4)+", auto 40px auto 40px)";
+
 var i;
 var rowPair;
 var rowImpair;
@@ -158,18 +156,22 @@ items[j].style.gridRow = rowPair;
 }
 }
 }
+}
+	jQuery( document ).ready(function() {
+	var wrapper=document.querySelectorAll('.et_pb_ajax_pagination_container');
+	for(var k=0; k<wrapper.length;k++){
+		Masonry(wrapper[k]);
+	}	
+});
+
 </script>
 <script>
-// Isotope by David de Sandro https://isotope.metafizzy.co/
-
 var elem = document.querySelector( '.wrapper' );
 var grid = new Isotope( elem, {});
-
 var filterRed    = document.querySelector( '.filter-red' );
 var filterBlue   = document.querySelector( '.filter-blue' );
 var filterYellow = document.querySelector( '.filter-yellow' );
 var filterReset  = document.querySelector( '.filter-reset' );
-
 filterRed.addEventListener( "click", function( event ){
   event.preventDefault();
   grid.arrange({ filter: '.card-red' })
