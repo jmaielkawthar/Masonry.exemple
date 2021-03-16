@@ -1,0 +1,68 @@
+td, th {
+    border-bottom: 1px solid $color-gray-soften ;
+    padding: 5px 20px 5px auto;
+    float: left;
+}
+table {
+    overflow-x:auto;
+    width: 100%;
+    border-collapse: collapse;
+    tbody{
+        display: flex;
+    }
+}
+    tr{
+        display: flex;
+        flex-wrap:  wrap-reverse;
+        flex-direction: column;
+        th{
+            color: $color-gray-soften;
+        }
+    }
+table#table-long{
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+    tbody{
+        display: table;
+        width: 100%;
+    }
+    tr{
+        width: 100%;
+        display: table-row;
+        td, th {
+            width: auto;
+            height: 60px;
+            border-bottom: 1px solid $color-gray-soften ;
+            border-top: 1px solid $color-gray-soften ;
+            border-left: 1px solid $color-gray-soften ;
+            border-right: 1px solid $color-gray-soften ;
+            display: table-cell;
+            padding: 12px 10px;
+            float: none;
+            text-align: left;
+            a{
+                line-height: 0;
+            }
+        }
+        th{
+            color: $color-gray-soften;
+        }
+
+    }
+    td:first-child , th:first-child  {
+        width:calc(100% + 40px);
+    }
+    td:nth-child(2) , th:nth-child(2) {
+        width:calc(100% + 30px);
+    }
+    td:nth-child(3) , th:nth-child(3) {
+        width:calc(100% + 160px);
+    }
+    td:last-child , th:last-child {
+        width:fit-content;
+    }
+    tr:hover {background-color: $color-white-softer;}
+    tr:first-child:hover {background-color: unset;}
+}

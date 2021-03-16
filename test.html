@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <link rel="stylesheet" href="style.css">
 <style>
-  body{
-    margin: 40px;
-    max-width: 1440px;
-    min-width: 700px;
-  }
+
+/* ---- grid ---- */
+body{
+  width: 100%;
+    max-width: 1360px;
+}
 .wrapper-grid {
   display: grid;
-  grid-template-columns: repeat(4, 310px);
-  gap: 40px 40px;
+  gap: 0px 40px;
   grid-auto-flow: dense;
+  margin: 0 auto;
 }
-.wrapper-grid div:nth-child(4n+1) {
+/* ---- .grid-item ---- */
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.grid-item {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  padding: 10px;
+  background: red;
+  color: white;
+  font-size: 50px;
+}
+
+.grid-item--width2 { width: 210px; }
+.grid-item--height2 { height: 210px; }
+
+.grid-item:nth-child(10n+0) { background: hsl(   0, 100%, 50%); }
+.grid-item:nth-child(10n+1) { background: hsl(  36, 100%, 50%); }
+.grid-item:nth-child(10n+2) { background: hsl(  72, 100%, 50%); }
+.grid-item:nth-child(10n+3) { background: hsl( 108, 100%, 50%); }
+.grid-item:nth-child(10n+4) { background: hsl( 144, 100%, 50%); }
+.grid-item:nth-child(10n+5) { background: hsl( 180, 100%, 50%); }
+.grid-item:nth-child(10n+6) { background: hsl( 216, 100%, 50%); }
+.grid-item:nth-child(10n+7) { background: hsl( 252, 100%, 50%); }
+.grid-item:nth-child(10n+8) { background: hsl( 288, 100%, 50%); }
+.grid-item:nth-child(10n+9) { background: hsl( 324, 100%, 50%); }
+.element-item {
+  background: gray;
+  margin-bottom: 40px;
+}
+
+/* .wrapper-grid div:nth-child(4n+1) {
  grid-column: 1/ 2;
 }
 .wrapper-grid div:nth-child(4n+2) {
@@ -25,61 +63,377 @@
 }
 .wrapper-grid div:nth-child(4n+4) {
  grid-column: 4/ 5;
+} */
+.element-item   article{
+  object-fit: cover;  
+  overflow: hidden;
+  width: auto;
 }
-.red{
-  background-color:red;
-  height: 100%;
-width: auto;
+.element-item   article:nth-child(2n+1) img{
+	height:410px !important;
+ 	    object-fit: cover;  
 }
-.blue{
-  background-color:blue;
-  height: 100%;
-width: auto;
+.element-item   article:nth-child(2n+0) img {
+	height:310px !important;
+    object-fit: cover;  
 }
-.yellow{
-  background-color:yellow;
-  height: 100%;
-width: auto;
+.element-item   article img  a{
+color:red;
 }
-.gray{
-  background-color:gray;
-  height: 100%;
-width: auto;
-}
-.card {
 
-height: 100%;
-width: auto;
+
+/* Anything bellow here isn't necessary, it's only for the demo */
+
+
+
+/* Set some height to cards */
+
+
+
+body {
+  background-color: #F9F7F7;
 }
 
 </style>
 </head>
 <body>
- 
-<div class="wrapper-grid ">
-   <div class="red card   " >One</div>
-   <div class="yellow  card " >Two</div>
-   <div class="red  card  "  >Three</div>
-   <div class="gray card  " >Four</div>
-   <div class="red card "  >Five</div>
-   <div class="gray card  " >Six</div>
-   <div class="red card " >Seven</div>
-   <div class="blue card " > Eight</div>
-   <div class="yellow card   "  >nine</div>
-   <div class="blue card "  >ten</div>
-   <div class="gray card  "  >eleven</div>
-   <div class="gray card " >twelve</div>
-   <div class="yellow card  "  >13</div>
-   <div class="blue card "  >14</div>
-   <div class="gray card  "  >15</div>
-   <div class="yellow card " >16</div>
-   <div class="red card  " >17</div>
-   <div class="blue card " >18</div>
-   <div class="gray card "  >19</div>
-   <div class="blue card "  >20</div>
-</div> 
+  <h1>Isotope - filtering</h1>
+
+  <div class="button-group filters-button-group">
+    <button class="button is-checked" data-filter="*">show all</button>
+    <button class="button" data-filter=".metal">metal</button>
+    <button class="button" data-filter=".transition">transition</button>
+    <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
+    <button class="button" data-filter=":not(.transition)">not transition</button>
+    <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
+  </div>
+<div class="wrapper-grid  cards  grid">
+
+     <div class="element-item transition metal red card" >
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles1.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+           one
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+     <div class="element-item metalloid yellow  card " >
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles2.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+           two
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+     <div class="element-item post-transition metal red  card width2 height2" data-category="post-transition">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles3.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+          three
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+     <div class="element-item post-transition metal gray card height2" data-category="post-transition">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles4.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+            four
+             </p>
+           </div>
+          </div>			
+      </article>
+
+    </div>
+
+     <div class="element-item transition metal red card width2" data-category="transition">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles5.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+            five
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+     <div class="element-item alkali metal gray card width2 height2" data-category="alkali">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles6.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+            six
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+     <div class="element-item alkali metal red card" data-category="alkali">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles7.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+           seven
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+  <div class="element-item transition metal blue card " data-category="transition">
+    <article id="post-15021" class="et_pb_post  category-karriere" >
+      <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+        <img loading="lazy" src="img-aktuelles8.jpg" alt="Initiativbewerbung" class="">
+      </a>
+        <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+        <div class="post-content">
+          <div class="post-content-inner">
+            <p>
+        eight
+           </p>
+         </div>
+        </div>			
+    </article>
+  </div>
+
+     <div class="element-item alkaline-earth metal yellow card" data-category="alkaline-earth">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles9.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+            nine
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+     <div class="element-item transition metal blue card  " data-category="transition">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles10.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+           ten
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+     <div class="element-item post-transition metal gray card " data-category="post-transition">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles11.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+            eleven
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+  <div class="element-item metalloid gray card" data-category="metalloid">
+    <article id="post-15021" class="et_pb_post  category-karriere" >
+      <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+        <img loading="lazy" src="img-aktuelles12.jpg" alt="Initiativbewerbung" class="">
+      </a>
+        <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+        <div class="post-content">
+          <div class="post-content-inner">
+            <p>
+          twelve
+           </p>
+         </div>
+        </div>			
+    </article>
+    </div>
+
+     <div class="element-item transition metal yellow card  " data-category="transition">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles13.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+           thirteen
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+  <div class="element-item lanthanoid metal inner-transition blue card  " data-category="lanthanoid">
+    <article id="post-15021" class="et_pb_post  category-karriere" >
+      <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+        <img loading="lazy" src="img-aktuelles14.jpg" alt="Initiativbewerbung" class="">
+      </a>
+        <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+        <div class="post-content">
+          <div class="post-content-inner">
+            <p>
+          fourteen
+           </p>
+         </div>
+        </div>			
+    </article>
+  </div>
+
+  <div class="element-item noble-gas nonmetal gray card " data-category="noble-gas">
+    <article id="post-15021" class="et_pb_post  category-karriere" >
+      <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+        <img loading="lazy" src="img-aktuelles15.jpg" alt="Initiativbewerbung" class="">
+      </a>
+        <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+        <div class="post-content">
+          <div class="post-content-inner">
+            <p>
+          fiveteen
+           </p>
+         </div>
+        </div>			
+    </article>
+    </div>
+
+  <div class="element-item diatomic nonmetal yellow card " data-category="diatomic">
+    <article id="post-15021" class="et_pb_post  category-karriere" >
+      <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+        <img loading="lazy" src="img-aktuelles16.jpg" alt="Initiativbewerbung" class="">
+      </a>
+        <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+        <div class="post-content">
+          <div class="post-content-inner">
+            <p>
+         sixteen
+           </p>
+         </div>
+        </div>			
+    </article>
+    </div>
+
+
+     <div class="element-item actinoid metal inner-transition red card  " data-category="actinoid">
+      <article id="post-15021" class="et_pb_post  category-karriere" >
+        <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+          <img loading="lazy" src="img-aktuelles1.jpg" alt="Initiativbewerbung" class="">
+        </a>
+          <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+          <div class="post-content">
+            <div class="post-content-inner">
+              <p>
+            seventeen
+             </p>
+           </div>
+          </div>			
+      </article>
+    </div>
+
+
+  <div class="element-item actinoid metal inner-transition blue card" data-category="actinoid">
+    <article id="post-15021" class="et_pb_post  category-karriere" >
+      <a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/" class="entry-featured-image-url">
+        <img loading="lazy" src="img-aktuelles11.jpg" alt="Initiativbewerbung" class="">
+      </a>
+        <h2 class="entry-title"><a href="http://lucol.group.w01b7b31.kasserver.com/initiativbewerbung/">Initiativbewerbung</a></h2>
+        <div class="post-content">
+          <div class="post-content-inner">
+            <p>
+         eighteen
+           </p>
+         </div>
+        </div>			
+    </article>
+    </div>
+</div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://npmcdn.com/minigrid@3.0.1/dist/minigrid.min.js"></script>
+<script src="gridMasonry-responsive-auto.js"></script> 
 <script>
+
+// external js: isotope.pkgd.js
+
+// init Isotope
+var $grid = $(".grid").isotope({
+    itemSelector: ".element-item",
+    layoutMode: "fitRows"
+  });
+  // filter functions
+  var filterFns = {};
+  // bind filter button click
+  $(".filters-button-group").on("click", "button", function() {
+    var filterValue = $(this).attr("data-filter");
+    $grid.isotope({ filter: filterValue });
+  });
+//   // change is-checked class on buttons
+//   $(".button-group").each(function(i, buttonGroup) {
+//     var $buttonGroup = $(buttonGroup);
+//     $buttonGroup.on("click", "button", function() {
+//       $buttonGroup.find(".is-checked").removeClass("is-checked");
+//       $(this).addClass("is-checked");
+//     });
+//   });
+
+
+
+</script>
+
+<!-- <script>
 var wrapper=document.querySelector('.wrapper-grid');
 var items = wrapper.children;
 wrapper.style.gridTemplateRows="repeat("+Math.ceil(items.length/4)+", 250px 250px 250px 250px)"
@@ -104,6 +458,6 @@ items[j].style.gridRow = rowPair;
 }
 }
 }
-</script>
+</script> -->
 
 </html>

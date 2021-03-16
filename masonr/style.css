@@ -1,0 +1,13 @@
+.wrapper {
+  padding: 0 calc(50% - 600px);
+}
+
+.grid-item {
+  width: 375px;
+  margin: 5px !important;
+}
+
+.grid-sizer {
+  width: 375px;
+}
+/*# sourceMappingURL=style.css.map */
