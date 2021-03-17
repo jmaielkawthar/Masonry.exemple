@@ -1,0 +1,20 @@
+.btn {
+    &:hover + .box {
+        transform: scale(1);
+        // transform: rotate(0deg);
+        span {
+            transform: translateY(0);
+        }
+    }
+}
+.box {
+    overflow: hidden;
+    transform: scale(.1);
+    // transform: rotate(-90deg);
+    transition: transform 330ms ease-in-out;
+    span {
+        transform: translateY(250%);
+        transition: transform 280ms ease-out 50ms;
+        display: block;
+    }
+}

@@ -1,0 +1,30 @@
+.btn:hover + .box {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.btn:hover + .box span {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.box {
+  overflow: hidden;
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+  -webkit-transition: -webkit-transform 330ms ease-in-out;
+  transition: -webkit-transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
+}
+
+.box span {
+  -webkit-transform: translateY(250%);
+          transform: translateY(250%);
+  -webkit-transition: -webkit-transform 280ms ease-out 50ms;
+  transition: -webkit-transform 280ms ease-out 50ms;
+  transition: transform 280ms ease-out 50ms;
+  transition: transform 280ms ease-out 50ms, -webkit-transform 280ms ease-out 50ms;
+  display: block;
+}
+/*# sourceMappingURL=style-transform.css.map */
